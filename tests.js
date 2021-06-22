@@ -2,12 +2,8 @@
 /* eslint-disable indent */
 let describe = require('mocha').describe
 let it = require('mocha').it
-let retirementBalance = require('./calculations')
-const retirementIncomePerYear = require('./calculations')
-let yearsWithRetirementIncome = require('./calculations')
-
-
 let expect = require('chai').expect
+let { retirementBalance, retirementIncomePerYear, yearsWithRetirementIncome } = require('./calculations')
 
 describe('calculations', () => {
   describe('retirementBalance', () => {

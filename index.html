@@ -12,13 +12,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Self Retirement Calculcator</title>
-        <link rel="icon" type="image/png" href="images/favicon.ico">
+    <link rel="icon" type="image/png" href="images/favicon.ico">
 </head>
 <body>
-    <div class="header">
-        <div class="container1">
-        <div class="logo">
-            <img src="images/Self_Logo_Header.svg" alt="Self inc logo">
+    <div clas="container1">
+        <div class="header">
+            <div class="logo">
+                    <img src="images/Self_Logo_Header.svg" alt="Self inc logo">
         </div>
         <div class="nav">
             <a href="/https://www.self.inc/">Learn v</a>
@@ -27,15 +27,77 @@
             <a href="#">Get $10</a>
             <a href="#">Help</a>
         </div>
+        <div class="space">
         </div>
-                <div class="space"></div>
-                <div class="login">
-                    <a href="/#/">Log In</a>    
-                </div>
-                <div class="start">
-                    <a href="/#/">Start Building Today</a>  
-                </div>
+        <div class="login">
+            <a href="/#/">Log In</a>    
+        </div>
+        <div class="start">
+            <a href="/#/">Start Building Today</a>  
+        </div>
+    </div>
+    
+    <div class="container2">
+        <h1> Plan Your Retirement</h1>
+    </div>
+
+    <div class="container3">
+        <form>
+        <div class="inputs">
+            <div class="i1">
+            <h2>Current age</h2>
+		    <input type="number" id="currentAge" value="40" placeholder="Age in Years">
             </div>
+
+            <div class="i2">
+            <h2>Retirement age</h2>
+            <input type="number" id="retirementAge" value= "65" placeholder="Retirement Age"/>
+            </div>
+
+            <div class="i3">
+            <h2>Current income</h2>
+            <input type="number" id="currentIncome" value="100000" placeholder="Income"/>
+            </div>
+
+            <div>
+            <h2>Income increase</h2>
+            <input type="number" id="incomeIncrease" value="2"/>
+            </div>
+
+            <div>
+            <h2>Income contributed</h2>
+            <input type="number" id="incomeContributed" value="25" />
+            </div>
+
+            <div>
+            <h2>Current Savings</h2>
+            <input type="number" id="retirementSavings" value="200000"/>
+            </div>
+
+            <div>
+            <h2>Anticipated Spending in Retirement</h2>
+            <input type="number" id="anticSpending" value="120000"/>
+            </div>
+
+        </div>        
+                
+        <br/>
+            <div>
+            <button class="button" type="button" onclick="retirementBalance()">Calculate</button>
+            <h2>Retirement Balance:</h2><h2 id="balance"></h2>
+            
+            <button class="button" type="button" onclick="retirementIncomePerYear()">Calculate</button>
+            <h2>Retirement Income Per Year:</h2><h2 id="incomeBalance"></h2>
+
+            <button class="button" type="button" onclick="yearsWithRetirementIncome()">Calculate</button>
+            <h2>Years with income:</h2><h2 id="yearsWithIncome"></h2>
+        </form>
+    </div>
+
+        <p>Questions? Visit <b class="boldp">frequently asked questions</b>.</p>
+        <div class="footer">
+            <p>Self. Financial 2021</p>
+        </div>
     </div>
     <div class="container2">
         <h1> Plan Your Retirement</h1>
@@ -53,6 +115,7 @@
                 </form>    
     </div>
 
+    <script src="calculations.js"></script>
 
     
 </body>
