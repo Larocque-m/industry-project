@@ -30,7 +30,7 @@
         <div class="space">
         </div>
         <div class="login">
-            <a href="/#/">Log In</a>    
+            <a href="/#/">Log In</a>
         </div>
         <div class="start">
             <a href="/#/">Start Building Today</a>  
@@ -41,79 +41,56 @@
         <h1> Plan Your Retirement</h1>
     </div>
 
+    <main class="main">
     <div class="container3">
         <form>
-        <div class="inputs">
+        <!-- <div class="inputs"> -->
             <div class="i1">
             <h2>Current age</h2>
 		    <input type="number" id="currentAge" value="40" placeholder="Age in Years">
+            <h2>Retirement age</h2>
+            <input type="number" id="retirementAge" value= "65" placeholder="Retirement Age"/>
+            <h2>Current income</h2>
+            <input type="number" id="currentIncome" value="100000" placeholder="Income"/>
+            <h2>Assets Return</h2>
+            <input type="number" id="assetsReturn" value="5"/>
             </div>
 
             <div class="i2">
-            <h2>Retirement age</h2>
-            <input type="number" id="retirementAge" value= "65" placeholder="Retirement Age"/>
-            </div>
-
-            <div class="i3">
-            <h2>Current income</h2>
-            <input type="number" id="currentIncome" value="100000" placeholder="Income"/>
-            </div>
-
-            <div>
             <h2>Income increase</h2>
             <input type="number" id="incomeIncrease" value="2"/>
-            </div>
-
-            <div>
             <h2>Income contributed</h2>
             <input type="number" id="incomeContributed" value="25" />
-            </div>
-
-            <div>
             <h2>Current Savings</h2>
             <input type="number" id="retirementSavings" value="200000"/>
-            </div>
-
-            <div>
-            <h2>Anticipated Spending in Retirement</h2>
+            <h2>Anticipated Spending</h2>
             <input type="number" id="anticSpending" value="120000"/>
+            </div>   
+
+            <div class="container4">
+            <p>Chart will go here</p>
             </div>
 
-        </div>        
-                
-        <br/>
-            <div>
-            <button class="button" type="button" onclick="retirementBalance()">Calculate</button>
-            <h2>Retirement Balance:</h2><h2 id="balance"></h2>
-            
-            <button class="button" type="button" onclick="retirementIncomePerYear()">Calculate</button>
-            <h2>Retirement Income Per Year:</h2><h2 id="incomeBalance"></h2>
-
-            <button class="button" type="button" onclick="yearsWithRetirementIncome()">Calculate</button>
-            <h2>Years with income:</h2><h2 id="yearsWithIncome"></h2>
         </form>
-    </div>
+        
+            <div class= "submit">
+            <h2>Retirement Balance:</h2><h2 id="balance"></h2>
+            <button class="button" type="button" onclick="retirementBalance()">Calculate</button>
 
-        <p>Questions? Visit <b class="boldp">frequently asked questions</b>.</p>
-        <div class="footer">
+            <h2>Retirement Income Per Year:</h2><h2 id="incomeBalance"></h2>
+            <button class="button" type="button" onclick="retirementIncomePerYear()">Calculate</button>
+
+            <h2>Years with income:</h2><h2 id="yearsWithIncome"></h2>
+             <button class="button" type="button" onclick="yearsWithRetirementIncome()">Calculate</button>
+            </div> 
+</main>
+    <div class="questions">
+</div>
+        <footer class="footer">
+            <p>Questions? Visit <b class="boldp">frequently asked questions</b>.</p>
+
             <p>Self. Financial 2021</p>
-        </div>
-    </div>
-    <div class="container2">
-        <h1> Plan Your Retirement</h1>
-    </div>
-    <div class="container3">
-        <h2> Age </h2>
-            <input min="0" max="100" step="1" fill="65" type="range" class="igr6v6-1 MQkBV" value="65"> 
-                <form action="signup.html" method="post" id="signup">
-                    <h1>Sign Up</h1>
-                    <small></small>
-                    <input type="text" placeholder="Full Name">
-                    <small></small>
-                    <input type="text" placeholder="Email Address">
-                    <input type="submit" value="Subscribe">
-                </form>    
-    </div>
+        </footer>
 
     <script src="calculations.js"></script>
 
