@@ -19,6 +19,7 @@
   "homepage": "https://github.com/keefers1030/industry-project#readme",
   "devDependencies": {
     "chai": "^4.3.4",
+    "env-cmd": "^10.1.0",
     "eslint": "^7.26.0",
     "mocha": "^8.4.0",
     "nodemon": "^2.0.7"
