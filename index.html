@@ -22,12 +22,18 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	title:{
 		text: "Retirement Balance"
 	},
+    axisX: {
+        title: "age"
+    },
+    axisY: {
+        title: "$ saved"
+    },
 	data: [{        
 		type: "line",
       	indexLabelFontSize: 16,
 		dataPoints: [
-			{ y: 410 , indexLabel: "\u2193 current savings",markerColor: "orange", markerType: "cross" },
-            { y: 520, indexLabel: "\u2191 retirement balance",markerColor: "orange", markerType: "triangle" },
+			{ y: 15000 , x: 35 , indexLabel: "\u2193 current savings",markerColor: "orange", markerType: "cross" },
+            { y: 85000, x: 72 , indexLabel: "\u2191 retirement balance",markerColor: "orange", markerType: "triangle" },
 		]
 	}]
 });
