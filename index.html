@@ -13,34 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Self Retirement Calculcator</title>
     <link rel="icon" type="image/png" href="images/favicon.ico">
-<script>
-window.onload = function () {
-
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	theme: "light2",
-	title:{
-		text: "Retirement Balance"
-	},
-    axisX: {
-        title: "age"
-    },
-    axisY: {
-        title: "$ saved"
-    },
-	data: [{        
-		type: "line",
-      	indexLabelFontSize: 16,
-		dataPoints: [
-			{ y: 15000 , x: 35 , indexLabel: "\u2193 current savings",markerColor: "orange", markerType: "cross" },
-            { y: 85000, x: 72 , indexLabel: "\u2191 retirement balance",markerColor: "orange", markerType: "triangle" },
-		]
-	}]
-});
-chart.render();
-
-}
-</script>
 </head>
 <body>
     <nav>
@@ -72,61 +44,60 @@ chart.render();
     </nav>
 
     <main class="main">
-        <h4>It is never too early to start planning for your retirement. 
-            <br/>
-            Use our retirement planner below to start saving.</h4>
     <div class="container3">
         <form>
-        <!-- <div class="inputs"> -->
             <div class="i1">
             <h2>Current age</h2>
 		    <span class="valuePadding"><input type="number" id="currentAge" max="100" placeholder="age in years"/></span>
-            <h2>Retirement age</h2>
+            <h2 data-tooltip="The age at which you wish to retire">Retirement age</h2>
             <span class="valuePadding"><input type="number" id="retirementAge" max="120" placeholder="age at retirement"/></span>
             <h2>Current income</h2>
             <span class="valuePadding">$<input type="number" id="currentIncome" placeholder="current income"/></span>
-            <h2>Income increase</h2>
-            <span class="valuePadding"><input type="number" id="incomeIncrease" class="percentage" max="100" placeholder="income increase"/>%</span>
+            <h2 data-tooltip="Your income might increase about 2% each year">Income increase</h2>
+            <span class="valuePadding"><input type="number" value="2" id="incomeIncrease" class="percentage" max="100" placeholder="income increase"/>%</span>
             </div>
 
             <div class="i2">
-            <h2>Assets return</h2>
-            <span class="valuePadding"><input type="number" id="assetsReturn" class="percentage" max="100" placeholder="assets return"/>%</span>
-            <h2>Income contributed</h2>
-            <span class="valuePadding"><input type="number" id="incomeContributed" class="percentage" max="100" placeholder="income contributed"/>%</span>
             <h2>Current savings</h2>
             <span class="valuePadding">$<input type="number" id="retirementSavings" placeholder="current savings"/></span>
-            <h2>Anticipated Spending</h2>
+            <h2 data-tooltip="The % of your income you are contributing to retirement">Income contributed</h2>
+            <span class="valuePadding"><input type="number" id="incomeContributed" class="percentage" max="100" placeholder="income contributed"/>%</span>
+             <h2 data-tooltip="The average % of your assets (ie stocks & bonds) is 5%">Assets return</h2>
+            <span class="valuePadding"><input type="number" value="5" id="assetsReturn" class="percentage" max="100" placeholder="assets return"/>%</span>
+            <h2 data-tooltip="The amount you think you will spend yearly during retirement">Anticipated Spending</h2>
             <span class="valuePadding">$<input type="number" id="anticSpending" placeholder="anticipated spending"/></span>
             </div>   
         <div class="container4">
-                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
+                <div id="chartContainer" style="height: 270px; width: 100%;">
+                </div>
                 <div class="live-data">
-			        <h3><label id="yearsWithIncome">...</label> years with retirement income</h3> 
-		            <h3>You can expect to save $<label  id="balance">...</label> 
-                    <br>which will give you $<label  id="incomeBalance">...</label> per year during retirement
+			        <h3 class="suggestions"><label id="yearsWithIncome"></label> years with retirement income <br/> 
+		            You can expect to save a total of $<label  id="balance"></label> for retirement
+                    <br>which will give you $<label  id="incomeBalance"></label> to spend each year
                     </div>
             </div>
         </form>
-
-            <div class= "submit">
-             <h2 id="balance"></h2>
-            <button class="button" type="button" onclick="retirementCalculations()">Calculate</button>
-            </div> 
-</main>
-
-    <div class="questions">
+        <div class= "submit">
+            <button class="button" id="renderButton" type="button" onclick="retirementCalculations()">Calculate</button>
+        </div>
+    <!-- <div class="questions">
         <p>Questions? Visit <b class="boldp">frequently asked questions</b>.</p>
-    </div>
+    </div> -->
+
+    <img class="wave" src="images/Blue_Top_Wave_2.svg">
+<div class="suggestion-container">
+    <h3 class="suggestions2">Try these tips to improve your savings potential:</br></br>
+        <label id="suggestion1" style="font-weight:400"></label><br/>
+        <label id="suggestion2" style="font-weight:400"></label></h3>
+</div>
+    </main>
+
         <footer class="footer">
             <br>
             <p>Self. Financial 2021</p>
         </footer>
 
-    <script src="calculations.js"></script>
-
-    
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="calculations.js"></script>
 </body>
 </html>
